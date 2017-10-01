@@ -23,15 +23,14 @@ Here's the code; Please review and feedback to me!
 ##  Further reading can be found here http://docs.python.org/library/socket.html
 
 import socket
-import os, sys
 
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mysock.connect(('www.dsittraining.com', 80))
 mysock.send('GET http://new.dsittraining.com/ HTTP/1.0\n\n')
 
 while True:
-        data=mysock.recv(512)
-        if (len(data) <1 ) :
-                break
-        print data
-mysock.close ()
+    data = mysock.recv(512)
+    if len(data) < 1:
+        break
+    print data
+mysock.close()
